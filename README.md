@@ -59,3 +59,16 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Run the project:
+
+```bash
+python tender_monitor.py
+```
+
+The output report will be generated at:
+
+```text
+reports/daily_monitoring_report_500.xlsx
+```
