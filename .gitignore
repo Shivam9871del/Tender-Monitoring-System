@@ -1,3 +1,16 @@
 venv/
 __pycache__/
 *.pyc
+
+airflow.db
+airflow.db-shm
+airflow.db-wal
+airflow.cfg
+logs/
+dags/
+data/
+archive/
+simple_auth_manager_passwords.json.generated
+
+.DS_Store
+*.Zone.Identifier

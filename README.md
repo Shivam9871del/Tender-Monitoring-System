@@ -1,122 +1,61 @@
 # Tender Monitoring System
 
+Python/Pandas based Tender Monitoring and SLA Tracking System for automated MIS reporting.
+
 ## Project Overview
 
-This project automates the monitoring of tender activities and provides daily management reports for tracking tender progress, SLA compliance, officer workload, and data quality issues.
+This project automates tender lifecycle monitoring from Excel data. It processes 500 tender records and generates management-level reports for tender status, SLA delay, pending responsibility, GM attention cases, officer workload, completed tenders, cancelled tenders, and exception records.
 
-The system reads tender data from an Excel workbook, processes the information using Python and Pandas, and generates multiple management reports in Excel format.
+## Dataset
 
----
+The input file contains 500 tender records across:
 
-## Features
+- Services
+- Materials
+- Works
 
-### Daily Dashboard
+Tender status distribution:
 
-Provides overall tender statistics:
+- Completed tenders
+- Under process tenders
+- Cancelled tenders
 
-- Total tenders
-- Under process
-- Completed
-- Cancelled
-- GM attention required
-- Delayed tenders
-- On timeline tenders
+The dataset includes 20 tender officers and finance/GM approval routing.
 
----
+## Key Features
 
-### Live Tender Monitoring
+- Reads tender data from Excel
+- Calculates current tender stage
+- Identifies pending officer or approver
+- Calculates planned date and delay days
+- Marks SLA status as Delayed, On Timeline, or Before Timeline
+- Generates GM attention report
+- Generates officer-wise running tender summary
+- Generates exception report for data-quality issues
+- Exports final MIS report to Excel
 
-Tracks:
+## Reports Generated
 
-- Current tender stage
-- Pending officer
-- Planned completion date
-- Delay days
-- SLA status
-- Tender remarks
+The output Excel report contains:
 
----
+- dashboard
+- gm_attention
+- ongoing_tenders
+- completed_tenders
+- cancelled_tenders
+- officer_summary
+- exception_report
 
-### GM Attention Report
-
-Highlights critical tenders based on:
-
-- Delay greater than 30 days
-- High value delayed tenders
-- Approval bottlenecks
-
----
-
-### Officer Workload
-
-Shows officer-wise:
-
-- Running tenders
-- Delayed tenders
-- Before timeline tenders
-- On timeline tenders
-
----
-
-### Exception Report
-
-Automatically identifies data quality issues such as:
-
-- Missing previous activity dates
-- Incorrect sequence of tender activities
-- Out-of-order milestone completion
-
----
-
-## Input
-
-Excel workbook containing:
-
-- Tender master
-- Officer master
-- Activity configuration
-
----
-
-## Output
-
-Excel report containing:
-
-- Dashboard
-- GM Attention
-- Ongoing Tenders
-- Completed Tenders
-- Cancelled Tenders
-- Officer Workload
-- Exception Report
-
----
-
-## Technologies Used
+## Tech Stack
 
 - Python
 - Pandas
 - OpenPyXL
 - Excel
-- DateTime
 
----
+## How to Run
 
-## Business Value
+Install dependencies:
 
-The system helps management:
-
-- Monitor tender progress.
-- Identify delayed activities.
-- Track officer workload.
-- Detect data entry issues.
-- Improve SLA compliance.
-
----
-
-## Future Enhancements
-
-- Exception severity classification.
-- Officer-wise exception dashboard.
-- Automatic email alerts.
-- Interactive Power BI dashboard.
+```bash
+pip install -r requirements.txt
